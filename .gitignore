@@ -1,0 +1,7 @@
+BE/node_modules/
+FE/node_modules/
+*.log
+.DS_Store
+BE/dist
+FE/dist
+.idea
