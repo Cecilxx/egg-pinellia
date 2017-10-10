@@ -34,6 +34,11 @@
         axios.post('http://localhost:8080/user', {
           name: this.ruleForm.name,
           password: this.ruleForm.password
+        }).then(res => {
+          console.log(res)
+          const data = res.data
+
+          alert(data.msg)
         })
       }
     }

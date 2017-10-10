@@ -48,7 +48,7 @@ exports.mysql = {
     // 密码
     password: "Lxx0730",
     // 数据库名
-    database: "tt"
+    database: "user"
   },
   // 是否加载到 app 上，默认开启
   app: true,

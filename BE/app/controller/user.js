@@ -1,6 +1,6 @@
 module.exports = app => {
   class UserController extends app.Controller {
-    async index() {
+    async create() {
       // this.ctx.set("Access-Control-Allow-Origin", "*");
       // this.ctx.set("Access-Control-Expose-Headers", "Set-Cookie");
       // this.ctx.set("Access-Control-Allow-Methods", "GET, POST, PUT,OPTIONS");
@@ -9,18 +9,16 @@ module.exports = app => {
       //   "Access-Control-Allow-Headers",
       //   "Accept,x-csrf-token,X-Custom-Header,X-Requested-With,Origin, Content-Type, Authorization"
       // );
+      const ctx = this.ctx;
+      const service = ctx.service;
+      const body = ctx.request.body;
+      const name = body.name;
+      const password = body.password;
 
-      const a = await "Hello form";
-      this.ctx.body = {
-        code: 0,
-        msg: "操作成功",
-        data: {
-          name: this.ctx.request.body.name,
-          password: this.ctx.request.body.password
-        }
-      };
+      const result = await service.user.create(name, password);
+
+      ctx.body = result;
     }
   }
-
   return UserController;
 };
