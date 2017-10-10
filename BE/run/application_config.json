@@ -32,6 +32,7 @@
         "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view/config/locales",
         "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/locales",
         "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-cors/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql/config/locales",
         "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/locales",
         "/Users/liuxingxing/DEMO/Pinellia/BE/config/locales"
       ],
@@ -168,6 +169,21 @@
       "credentials": false,
       "keepHeadersOnError": true
     },
+    "mysql": {
+      "default": {
+        "database": null,
+        "connectionLimit": 5
+      },
+      "app": true,
+      "agent": false,
+      "client": {
+        "host": "localhost",
+        "port": "3306",
+        "user": "root",
+        "password": "<String len: 7>",
+        "database": "tt"
+      }
+    },
     "env": "local",
     "name": "be",
     "keys": "<String len: 9>",
@@ -189,7 +205,10 @@
       "dependencies": {
         "egg": "^1.9.0",
         "egg-cors": "^1.2.0",
-        "egg-view-nunjucks": "^2.1.4"
+        "egg-mysql": "^3.0.0",
+        "egg-sequelize": "^3.1.0",
+        "egg-view-nunjucks": "^2.1.4",
+        "mysql2": "^1.4.2"
       },
       "devDependencies": {
         "egg-bin": "^4.3.3"
@@ -499,6 +518,17 @@
       "from": "/Users/liuxingxing/DEMO/Pinellia/BE/config/plugin.js",
       "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-cors",
       "version": "1.2.0"
+    },
+    "mysql": {
+      "enable": true,
+      "package": "egg-mysql",
+      "name": "mysql",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql",
+      "version": "3.0.0"
     }
   }
 }

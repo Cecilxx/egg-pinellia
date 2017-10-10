@@ -61,6 +61,21 @@
       "policy": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js"
     }
   },
+  "mysql": {
+    "client": {
+      "host": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "port": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "user": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "password": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "database": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js"
+    },
+    "app": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+    "agent": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+    "default": {
+      "database": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql/config/config.default.js"
+    }
+  },
   "onerror": {
     "errorPageUrl": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-onerror/config/config.default.js",
     "appErrorFilter": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-onerror/config/config.default.js"
@@ -154,7 +169,10 @@
     "dependencies": {
       "egg": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
       "egg-cors": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
-      "egg-view-nunjucks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"
+      "egg-mysql": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "egg-sequelize": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "mysql2": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "egg-bin": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"

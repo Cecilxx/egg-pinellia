@@ -61,10 +61,20 @@
       "policy": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js"
     }
   },
-  "cors": {
-    "origin": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
-    "credentials": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
-    "allowMethods": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js"
+  "mysql": {
+    "client": {
+      "host": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "port": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "user": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "password": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+      "database": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js"
+    },
+    "app": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+    "agent": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js",
+    "default": {
+      "database": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql/config/config.default.js"
+    }
   },
   "onerror": {
     "errorPageUrl": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-onerror/config/config.default.js",
@@ -138,6 +148,7 @@
     "lstripBlocks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.default.js",
     "cache": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.local.js"
   },
+  "cors": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-cors/config/config.default.js",
   "env": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
   "name": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
   "proxy": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
@@ -158,7 +169,10 @@
     "dependencies": {
       "egg": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
       "egg-cors": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
-      "egg-view-nunjucks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"
+      "egg-mysql": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "egg-sequelize": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "mysql2": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "egg-bin": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"

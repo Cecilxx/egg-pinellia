@@ -26,3 +26,32 @@ exports.security = {
   },
   domainWhiteList: ["http://localhost:8081"] // 这个端口一定要跟你实际的一致
 };
+
+// exports.sequelize = {
+//   dialect: "mysql",
+//   database: "dev",
+//   host: "localhost",
+//   port: 3306,
+//   username: "root",
+//   password: "Lxx0730"
+// };
+
+exports.mysql = {
+  // 单数据库信息配置
+  client: {
+    // host
+    host: "localhost",
+    // 端口号
+    port: "3306",
+    // 用户名
+    user: "root",
+    // 密码
+    password: "Lxx0730",
+    // 数据库名
+    database: "tt"
+  },
+  // 是否加载到 app 上，默认开启
+  app: true,
+  // 是否加载到 agent 上，默认关闭
+  agent: false
+};
