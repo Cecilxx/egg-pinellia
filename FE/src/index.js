@@ -1,10 +1,18 @@
 import Vue from "vue";
-import { Button, Message, Form, FormItem, Input } from "element-ui";
+import {
+  Button,
+  Message,
+  Form,
+  FormItem,
+  Input,
+  Tabs,
+  TabPane
+} from "element-ui";
 import App from "./App";
 import router from "./router";
 import "./style/main.css";
 
-const UIComponents = [Button, Form, FormItem, Input];
+const UIComponents = [Button, Form, FormItem, Input, Tabs, TabPane];
 for (let i = 0, len = UIComponents.length; i < len; i++) {
   Vue.component(UIComponents[i].name, UIComponents[i]);
 }

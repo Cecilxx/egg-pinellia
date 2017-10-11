@@ -1,6 +1,6 @@
 module.exports = app => {
   class UserController extends app.Controller {
-    async create() {
+    async register() {
       // this.ctx.set("Access-Control-Allow-Origin", "*");
       // this.ctx.set("Access-Control-Expose-Headers", "Set-Cookie");
       // this.ctx.set("Access-Control-Allow-Methods", "GET, POST, PUT,OPTIONS");
@@ -15,7 +15,19 @@ module.exports = app => {
       const name = body.name;
       const password = body.password;
 
-      const result = await service.user.create(name, password);
+      const result = await service.user.register(name, password);
+
+      ctx.body = result;
+    }
+
+    async login() {
+      const ctx = this.ctx;
+      const service = ctx.service;
+      const body = ctx.request.body;
+      const name = body.name;
+      const password = body.password;
+
+      const result = await service.user.login(name, password);
 
       ctx.body = result;
     }
