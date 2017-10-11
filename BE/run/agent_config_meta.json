@@ -167,6 +167,8 @@
     "author": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
     "license": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
     "dependencies": {
+      "bcrypt": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
+      "csprng": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
       "egg": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
       "egg-cors": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
       "egg-mysql": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
