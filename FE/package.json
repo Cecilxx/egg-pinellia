@@ -11,7 +11,7 @@
   "author": "Cecilxx <xingxing.liu@ele.me>",
   "dependencies": {
     "axios": "^0.16.2",
-    "element-ui": "latest",
+    "element-ui": "^2.0.0-alpha.2",
     "vue": "latest",
     "vue-router": "latest"
   },
