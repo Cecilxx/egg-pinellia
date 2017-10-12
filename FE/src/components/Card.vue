@@ -18,7 +18,13 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    data () {
+      return {
+        currentDate: new Date().toDateString()
+      }
+    }
+  }
 </script>
 
 <style>
@@ -34,7 +40,23 @@
     }
     .image {
       width: 100%;
-      display: block
+      display: block;
+      height: 310px;
+      ;
+    }
+    .time {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .bottom {
+      margin-top: 13px;
+      line-height: 12px;
+    }
+
+    .button {
+      padding: 0;
+      float: right;
     }
   }
 </style>

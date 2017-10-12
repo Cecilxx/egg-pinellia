@@ -17,10 +17,12 @@
     width: 100%;
     .el-upload {
       width: 100%;
+      outline: none;
       .el-upload-dragger {
         width: 100%;
         border: 1px solid #e6ebf5;
         transition: all .3s;
+        height: 388px;
       }
 
       .el-upload-dragger:hover {
@@ -31,8 +33,8 @@
         font-size: 28px;
         color: #8c939d;
         width: 178px;
-        height: 178px;
-        line-height: 178px;
+        height: 378px;
+        line-height: 378px;
         text-align: center;
       }
     }
