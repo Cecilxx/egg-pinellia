@@ -10,7 +10,8 @@ import {
   Card,
   Row,
   Col,
-  Upload
+  Upload,
+  Tooltip
 } from 'element-ui'
 import App from './App'
 import router from './router'
@@ -26,7 +27,8 @@ const UIComponents = [
   Card,
   Row,
   Col,
-  Upload
+  Upload,
+  Tooltip
 ]
 for (let i = 0, len = UIComponents.length; i < len; i++) {
   Vue.component(UIComponents[i].name, UIComponents[i])
