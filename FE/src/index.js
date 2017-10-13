@@ -11,7 +11,10 @@ import {
   Row,
   Col,
   Upload,
-  Tooltip
+  Tooltip,
+  Dialog,
+  Select,
+  Option
 } from 'element-ui'
 import App from './App'
 import router from './router'
@@ -28,7 +31,10 @@ const UIComponents = [
   Row,
   Col,
   Upload,
-  Tooltip
+  Tooltip,
+  Dialog,
+  Select,
+  Option
 ]
 for (let i = 0, len = UIComponents.length; i < len; i++) {
   Vue.component(UIComponents[i].name, UIComponents[i])

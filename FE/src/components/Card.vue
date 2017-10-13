@@ -32,6 +32,7 @@
     width: 250px;
     height: 350px;
     margin-bottom: 20px;
+    position: relative;
   }
 </style>
 

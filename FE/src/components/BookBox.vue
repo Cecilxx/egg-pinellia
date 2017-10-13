@@ -10,6 +10,9 @@
 
     <div class="status-box">
       <div class="left">
+        入库：2017.01.01
+      </div>
+      <div class="right">
         <span :class="statusClass">
           {{ statusValue }}
 
@@ -22,6 +25,12 @@
         </span>
 
       </div>
+    </div>
+
+    <div class="action-box">
+      <i class="el-icon-information"></i>
+      <i class="el-icon-information"></i>
+      <i class="el-icon-information"></i>
     </div>
   </myCard>
 </template>
@@ -79,12 +88,24 @@
 
   .status-box {
     padding: 0 10px 10px 10px;
-
+    overflow: hidden;
     & .normal {
       color: green
     }
     & .borrow {
       color: red
     }
+
+    & .left {
+      float: left;
+    }
+
+    & .right {
+      float: right;
+    }
+  }
+
+  .action-box {
+    padding: 0 10px 10px 10px;
   }
 </style>
