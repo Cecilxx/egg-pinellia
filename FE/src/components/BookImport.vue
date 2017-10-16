@@ -3,21 +3,26 @@
     :close-on-click-modal="false"
     @close="_close"
     title="手工导入">
-    <el-form :model="form">
-      <el-form-item label="活动名称"
-        :label-width="formLabelWidth">
+    <el-form :model="form"
+      :label-width="formLabelWidth"
+      :rules="rules">
+      <el-form-item label="名称"
+        prop="name">
         <el-input v-model="form.name"
           auto-complete="off"></el-input>
       </el-form-item>
-      <el-form-item label="活动区域"
-        :label-width="formLabelWidth">
-        <el-select v-model="form.region"
-          placeholder="请选择活动区域">
-          <el-option label="区域一"
-            value="shanghai"></el-option>
-          <el-option label="区域二"
-            value="beijing"></el-option>
-        </el-select>
+      <el-form-item label="作者"
+        prop="author">
+        <el-input v-model="form.author"
+          auto-complete="off"></el-input>
+      </el-form-item>
+      <el-form-item label="备注"
+        prop="remark">
+        <el-input v-model="form.remark"
+          type="textarea"
+          resize="none"
+          :rows="3"
+          auto-complete="off"></el-input>
       </el-form-item>
     </el-form>
     <div slot="footer"
@@ -48,7 +53,17 @@
           resource: '',
           desc: ''
         },
-        formLabelWidth: '100px'
+        rules: {
+          name: [{
+            required: true,
+            message: '必填'
+          }],
+          author: [{
+            required: true
+          }]
+        },
+        formLabelWidth: '60px',
+        autoSize: { minRows: 3, maxRows: 3 }
       }
     },
     methods: {
