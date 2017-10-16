@@ -1,6 +1,6 @@
 <template>
   <el-col class="card-box">
-    <el-card :body-style="{ padding: '0px' }">
+    <el-card :body-style="{ padding: '0px', height: '100%' }">
       <slot>暂无照片</slot>
     </el-card>
   </el-col>
@@ -20,7 +20,6 @@
   .el-card {
     box-shadow: none;
     transition: all .2s;
-    height: 100%;
   }
 
   .el-card:hover {

@@ -67,10 +67,12 @@
               this.$message({
                 message: data.msg,
                 type: data.code === 0 ? 'success' : 'warning'
-              });
-              window.sessionStorage.setItem('username', this.ruleForm2.name)
-              window.sessionStorage.setItem('usertype', 2)
-              this.$router.push('pic')
+              })
+              if (data.code === 0) {
+                window.sessionStorage.setItem('username', this.ruleForm2.name)
+                window.sessionStorage.setItem('usertype', 2)
+                this.$router.push('pic')
+              }
             })
           }
         })

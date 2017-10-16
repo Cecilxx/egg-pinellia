@@ -181,7 +181,7 @@
         "port": "3306",
         "user": "root",
         "password": "<String len: 7>",
-        "database": "user"
+        "database": "pinellia"
       }
     },
     "env": "local",
