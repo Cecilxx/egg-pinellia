@@ -18,7 +18,8 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import API from '~api'
+
   export default {
     data () {
       return {
@@ -35,44 +36,41 @@
       }
     },
     methods: {
+      _message (message, type = "success") {
+        this.$message({
+          message,
+          type
+        });
+      },
       _register () {
         this.$refs.ruleForm2.validate(valid => {
           if (valid) {
-            axios.post('http://localhost:8080/register', {
+            API.register({
               name: this.ruleForm2.name,
               password: this.ruleForm2.password,
               type: 2
-            }).then(res => {
-              const data = res.data
-
-              this.$message({
-                message: data.msg,
-                type: data.code === 0 ? 'success' : 'warning'
-              });
+            }).then(({ data }) => {
+              this._message(data.msg)
+            }).catch(() => {
+              this._message('注册失败', 'error')
             })
           }
         })
       },
-
       _login () {
         this.$refs.ruleForm2.validate(valid => {
           if (valid) {
-            axios.post('http://localhost:8080/login', {
+            API.login({
               name: this.ruleForm2.name,
               password: this.ruleForm2.password,
               type: 2
-            }).then(res => {
-              const data = res.data
-
-              this.$message({
-                message: data.msg,
-                type: data.code === 0 ? 'success' : 'warning'
-              })
-              if (data.code === 0) {
-                window.sessionStorage.setItem('username', this.ruleForm2.name)
-                window.sessionStorage.setItem('usertype', 2)
-                this.$router.push('pic')
-              }
+            }).then(({ data }) => {
+              this._message(data.msg)
+              window.sessionStorage.setItem('username', this.ruleForm2.name)
+              window.sessionStorage.setItem('usertype', 2)
+              this.$router.push('pic')
+            }).catch(() => {
+              this._message('登录失败', 'error')
             })
           }
         })

@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-
 const config = require('./config')
 
 module.exports = {
@@ -17,7 +16,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.css', '.json'],
     alias: {
       '~': path.join(__dirname, '../src'),
-      '~components': path.join(__dirname, '../src/components')
+      '~components': path.join(__dirname, '../src/components'),
+      '~api': path.join(__dirname, '../src/api')
     }
   },
   performance: {},

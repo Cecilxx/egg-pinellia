@@ -4,11 +4,12 @@
     @close="_close"
     title="手工导入">
     <el-form :model="form"
+      ref="importForm"
       :label-width="formLabelWidth"
       :rules="rules">
       <el-form-item label="名称"
-        prop="name">
-        <el-input v-model="form.name"
+        prop="title">
+        <el-input v-model="form.title"
           auto-complete="off"></el-input>
       </el-form-item>
       <el-form-item label="作者"
@@ -28,12 +29,14 @@
     <div slot="footer"
       class="dialog-footer">
       <el-button>取 消</el-button>
-      <el-button type="primary">确 定</el-button>
+      <el-button type="primary"
+        @click="_import">确 定</el-button>
     </div>
   </el-dialog>
 </template>
 
 <script>
+  import API from '~api'
   export default {
     props: {
       dialogFormVisible: {
@@ -44,19 +47,13 @@
     data () {
       return {
         form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
+          title: '',
+          author: '',
+          remark: ''
         },
         rules: {
-          name: [{
-            required: true,
-            message: '必填'
+          title: [{
+            required: true
           }],
           author: [{
             required: true
@@ -69,6 +66,15 @@
     methods: {
       _close () {
         this.$emit('close')
+      },
+      _import () {
+        this.$refs.importForm.validate(valid => {
+          if (valid) {
+            API.importBook(this.form).then(res => {
+              this.$emit('success')
+            })
+          }
+        })
       }
     },
     computed: {

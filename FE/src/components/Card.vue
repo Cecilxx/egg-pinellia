@@ -29,7 +29,7 @@
 
   .card-box {
     width: 250px;
-    height: 350px;
+    height: 330px;
     margin-bottom: 20px;
     position: relative;
   }

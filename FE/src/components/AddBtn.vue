@@ -13,6 +13,7 @@
         </div>
       </transition>
       <bookImport :dialogFormVisible="importBook"
+        @success="_importSuccess"
         @close="_close"></bookImport>
     </div>
   </myCard>
@@ -44,6 +45,10 @@
       },
       _close () {
         this.importBook = false
+      },
+      _importSuccess () {
+        this.importBook = false
+        this.$emit('getList')
       }
     }
   }
@@ -52,7 +57,7 @@
 <style>
   .add {
     width: 100%;
-    height: 350px;
+    height: 330px;
   }
 
   .icon {
