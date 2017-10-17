@@ -2,7 +2,7 @@
   <myCard>
     <div class="img-box">
       <img :src="src"
-        alt="">
+        alt="封面">
     </div>
     <div class="title-box">
       <span class="left">{{values.title}}</span>

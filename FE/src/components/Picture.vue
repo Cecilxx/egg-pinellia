@@ -1,5 +1,8 @@
 <template>
   <div class="box-pic">
+    <el-row>
+      <div :style="{height: '30px', lineHeight: '30px'}">total: {{ list.length || 0 }}</div>
+    </el-row>
     <el-row :gutter="20">
       <myBookbox v-for="(item, index) in list"
         :key="index"
