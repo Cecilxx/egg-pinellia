@@ -6,7 +6,8 @@
     <el-row :gutter="20">
       <myBookbox v-for="(item, index) in list"
         :key="index"
-        :values="item"></myBookbox>
+        :values="item"
+        @getList="_getList"></myBookbox>
       <myAddBtn @getList="_getList"></myAddBtn>
     </el-row>
   </div>

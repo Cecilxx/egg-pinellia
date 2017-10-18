@@ -29,19 +29,32 @@
     </div>
 
     <div class="action-box">
-      <i class="el-icon-information"></i>
-      <i class="el-icon-information"></i>
-      <i class="el-icon-information"></i>
+      <div v-if="userType === '2'">
+        <i class="el-icon-edit act-icon"
+          @click="_edit"></i>
+        <i class="el-icon-delete act-icon"></i>
+      </div>
+      <div v-else>
+        <i class="el-icon-star-off"></i>
+      </div>
     </div>
+
+    <bookImport :dialogFormVisible="editBook"
+      :values="values"
+      @ok="_editOk"
+      @cancel="_close"></bookImport>
   </myCard>
 </template>
 
 <script>
   import myCard from './Card'
+  import bookImport from './BookImport'
+  import API from '~api'
 
   export default {
     components: {
-      myCard
+      myCard,
+      bookImport
     },
     props: {
       src: {
@@ -51,6 +64,26 @@
       values: {
         type: Object,
         default: {}
+      }
+    },
+    data () {
+      return {
+        userType: sessionStorage.getItem('usertype'),
+        editBook: false
+      }
+    },
+    methods: {
+      _edit () {
+        this.editBook = true
+      },
+      _close () {
+        this.editBook = false
+      },
+      _editOk (formValues) {
+        API.editBook({ ...formValues, id: this.values.id }).then(res => {
+          this.editBook = false
+          this.$emit('getList')
+        })
       }
     },
     computed: {
@@ -88,7 +121,7 @@
     padding: 0 10px 10px 10px;
     overflow: hidden;
     & .normal {
-      color: green
+      color: #13de3a
     }
     & .borrow {
       color: red
@@ -105,5 +138,14 @@
 
   .action-box {
     padding: 0 10px 10px 10px;
+  }
+
+  .act-icon {
+    cursor: pointer;
+    /* margin-right: 2px; */
+  }
+
+  .act-icon:nth-last-child(1) {
+    margin: 0
   }
 </style>

@@ -16,9 +16,14 @@ const getBookList = data => {
   return axios.get('/booklist')
 }
 
+const editBook = data => {
+  return axios.post('/editbook', data)
+}
+
 export default {
   login,
   register,
   importBook,
-  getBookList
+  getBookList,
+  editBook
 }

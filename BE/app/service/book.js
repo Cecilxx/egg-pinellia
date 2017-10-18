@@ -1,6 +1,6 @@
 module.exports = app => {
   class BookService extends app.Service {
-    async importbook({ title, author, remark, status = 101 }) {
+    async importBook({ title, author, remark, status = 101 }) {
       const date = new Date().toDateString()
       const insertResult = await app.mysql.insert('book_info', {
         title,
@@ -15,6 +15,23 @@ module.exports = app => {
           code: 0,
           msg: '录入成功',
           id: insertResult.insertId
+        }
+      }
+    }
+
+    async editBook({ title, author, remark, id }) {
+      const bookInfo = {
+        id,
+        title,
+        author,
+        remark
+      }
+      const updateResult = await app.mysql.update('book_info', bookInfo)
+
+      if (updateResult.affectedRows === 1) {
+        return {
+          code: 0,
+          msg: '更新成功'
         }
       }
     }

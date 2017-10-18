@@ -13,8 +13,8 @@
         </div>
       </transition>
       <bookImport :dialogFormVisible="importBook"
-        @success="_importSuccess"
-        @close="_close"></bookImport>
+        @ok="_importOk"
+        @cancel="_close"></bookImport>
     </div>
   </myCard>
 </template>
@@ -22,6 +22,8 @@
 <script>
   import myCard from './Card'
   import bookImport from './BookImport'
+  import API from '~api'
+
   export default {
     components: {
       myCard,
@@ -46,9 +48,11 @@
       _close () {
         this.importBook = false
       },
-      _importSuccess () {
-        this.importBook = false
-        this.$emit('getList')
+      _importOk (formValues) {
+        API.importBook(formValues).then(res => {
+          this.importBook = false
+          this.$emit('getList')
+        })
       }
     }
   }

@@ -1,10 +1,10 @@
 module.exports = app => {
   class BookController extends app.Controller {
-    async importbook() {
+    async importBook() {
       const ctx = this.ctx
       const service = ctx.service
       const body = ctx.request.body
-      const result = await service.book.importbook(body)
+      const result = await service.book.importBook(body)
 
       ctx.body = result
     }
@@ -13,6 +13,15 @@ module.exports = app => {
       const ctx = this.ctx
       const service = ctx.service
       const result = await service.book.getBookList()
+
+      ctx.body = result
+    }
+
+    async editBook() {
+      const ctx = this.ctx
+      const service = ctx.service
+      const body = ctx.request.body
+      const result = await service.book.editBook(body)
 
       ctx.body = result
     }

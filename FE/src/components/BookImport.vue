@@ -42,14 +42,18 @@
       dialogFormVisible: {
         type: Boolean,
         default: false
+      },
+      values: {
+        type: Object,
+        default: () => ({})
       }
     },
     data () {
       return {
         form: {
-          title: '',
-          author: '',
-          remark: ''
+          title: this.values.title,
+          author: this.values.author,
+          remark: this.values.remark
         },
         rules: {
           title: [{
@@ -65,14 +69,12 @@
     },
     methods: {
       _close () {
-        this.$emit('close')
+        this.$emit('cancel')
       },
       _import () {
         this.$refs.importForm.validate(valid => {
           if (valid) {
-            API.importBook(this.form).then(res => {
-              this.$emit('success')
-            })
+            this.$emit('ok', this.form)
           }
         })
       }
