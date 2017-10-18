@@ -14,7 +14,8 @@ import {
   Tooltip,
   Dialog,
   Select,
-  Option
+  Option,
+  Popover
 } from 'element-ui'
 import App from './App'
 import router from './router'
@@ -34,7 +35,8 @@ const UIComponents = [
   Tooltip,
   Dialog,
   Select,
-  Option
+  Option,
+  Popover
 ]
 for (let i = 0, len = UIComponents.length; i < len; i++) {
   Vue.component(UIComponents[i].name, UIComponents[i])

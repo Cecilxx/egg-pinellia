@@ -36,6 +36,17 @@ module.exports = app => {
       }
     }
 
+    async deleteBook({ id }) {
+      const updateResult = await app.mysql.delete('book_info', { id })
+
+      if (updateResult.affectedRows === 1) {
+        return {
+          code: 0,
+          msg: '删除成功'
+        }
+      }
+    }
+
     async getBookList() {
       const results = await app.mysql.select('book_info')
 

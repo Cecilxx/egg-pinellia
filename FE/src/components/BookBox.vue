@@ -32,10 +32,24 @@
       <div v-if="userType === '2'">
         <i class="el-icon-edit act-icon"
           @click="_edit"></i>
-        <i class="el-icon-delete act-icon"></i>
+        <el-popover ref="popover"
+          v-model="popoverVisible">
+          <p>确定删除吗？</p>
+          <div style="text-align: right; margin: 0">
+            <el-button size="mini"
+              @click="_deleteCancel"
+              type="text">取消</el-button>
+            <el-button type="text"
+              @click="_deleteOk"
+              size="mini">确定</el-button>
+          </div>
+        </el-popover>
+        <i class="el-icon-delete act-icon"
+          v-popover:popover></i>
       </div>
       <div v-else>
-        <i class="el-icon-star-off"></i>
+        <i class="el-icon-star-off"
+          @click="_delete"></i>
       </div>
     </div>
 
@@ -69,7 +83,8 @@
     data () {
       return {
         userType: sessionStorage.getItem('usertype'),
-        editBook: false
+        editBook: false,
+        popoverVisible: false
       }
     },
     methods: {
@@ -82,6 +97,18 @@
       _editOk (formValues) {
         API.editBook({ ...formValues, id: this.values.id }).then(res => {
           this.editBook = false
+          this.$emit('getList')
+        })
+      },
+      _delete () {
+        this.popoverVisible = true
+      },
+      _deleteCancel () {
+        this.popoverVisible = false
+      },
+      _deleteOk () {
+        API.deleteBook({ id: this.values.id }).then(res => {
+          this.popoverVisible = false
           this.$emit('getList')
         })
       }

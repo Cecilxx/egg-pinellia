@@ -20,10 +20,15 @@ const editBook = data => {
   return axios.post('/editbook', data)
 }
 
+const deleteBook = data => {
+  return axios.post('/deletebook', data)
+}
+
 export default {
   login,
   register,
   importBook,
   getBookList,
-  editBook
+  editBook,
+  deleteBook
 }

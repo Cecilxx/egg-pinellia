@@ -4,4 +4,5 @@ module.exports = app => {
   app.post('/importbook', app.controller.book.importBook)
   app.get('/booklist', app.controller.book.getBookList)
   app.post('/editbook', app.controller.book.editBook)
+  app.post('/deletebook', app.controller.book.deleteBook)
 }

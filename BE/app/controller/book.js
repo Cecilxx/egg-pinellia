@@ -25,6 +25,15 @@ module.exports = app => {
 
       ctx.body = result
     }
+
+    async deleteBook() {
+      const ctx = this.ctx
+      const service = ctx.service
+      const body = ctx.request.body
+      const result = await service.book.deleteBook(body)
+
+      ctx.body = result
+    }
   }
   return BookController
 }

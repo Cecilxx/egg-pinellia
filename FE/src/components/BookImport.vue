@@ -1,6 +1,5 @@
 <template>
   <el-dialog :visible.sync="showModal"
-    :close-on-click-modal="false"
     @close="_close"
     title="手工导入">
     <el-form :model="form"
@@ -28,7 +27,7 @@
     </el-form>
     <div slot="footer"
       class="dialog-footer">
-      <el-button>取 消</el-button>
+      <el-button @click="_close">取 消</el-button>
       <el-button type="primary"
         @click="_import">确 定</el-button>
     </div>
