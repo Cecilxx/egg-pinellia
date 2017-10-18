@@ -41,7 +41,7 @@ Get start with [Egg](https://eggjs.org/), [Vue](https://cn.vuejs.org/index.html)
 ## Objective
 
 - 登录注册（Done）
-- 管理员登录后可录入、删除书本信息（Developing）
+- 管理员登录后可录入、删除书本信息（Done）
 - 普通用户登录后可借阅、归还等操作（Waiting）
 
 ---
