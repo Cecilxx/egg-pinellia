@@ -8,7 +8,7 @@
         :key="index"
         :values="item"
         @getList="_getList"></myBookbox>
-      <myAddBtn @getList="_getList"></myAddBtn>
+      <myAddBtn @getList="_getList" v-if="userType === '2'"></myAddBtn>
     </el-row>
   </div>
 </template>
@@ -22,16 +22,17 @@
       myBookbox,
       myAddBtn
     },
-    created () {
+    created() {
       this._getList()
     },
-    data () {
+    data() {
       return {
-        list: []
+        list: [],
+        userType: sessionStorage.getItem('usertype')
       }
     },
     methods: {
-      _getList () {
+      _getList() {
         API.getBookList().then(({ data }) => {
           this.list = data.list
         })

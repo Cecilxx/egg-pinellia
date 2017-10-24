@@ -160,7 +160,9 @@
       "main": "index.js",
       "scripts": {
         "dev": "egg-bin dev --port 8080",
-        "debug": "egg-bin debug"
+        "debug": "egg-bin debug",
+        "start": "egg-scripts start --daemon",
+        "stop": "egg-scripts stop"
       },
       "author": "",
       "license": "ISC",
@@ -170,6 +172,7 @@
         "egg": "^1.9.0",
         "egg-cors": "^1.2.0",
         "egg-mysql": "^3.0.0",
+        "egg-scripts": "^2.1.0",
         "egg-sequelize": "^3.1.0",
         "egg-view-nunjucks": "^2.1.4",
         "mysql2": "^1.4.2"

@@ -6,69 +6,85 @@
     <el-form-item label="用户名"
       prop="name">
       <el-input v-model="ruleForm.name"
-        disabled></el-input>
+        ></el-input>
     </el-form-item>
     <el-form-item label="密码"
       prop="password">
       <el-input type="password"
         v-model="ruleForm.password"
-        disabled></el-input>
+        ></el-input>
     </el-form-item>
     <el-button @click="_register"
-      disabled>暂未开放</el-button>
+      >注册</el-button>
+    <el-button @click="_login"
+      >登录</el-button>
   </el-form>
 </template>
 
 <script>
   import axios from 'axios'
+  import API from '~api'
   export default {
-    data () {
+    data() {
       return {
         ruleForm: {},
-        ruleForm2: {},
+        ruleForm: {},
         rules: {
-          name: [{
-            required: true
-          }],
-          password: [{
-            required: true
-          }]
+          name: [
+            {
+              required: true
+            }
+          ],
+          password: [
+            {
+              required: true
+            }
+          ]
         }
       }
     },
     methods: {
-      _register () {
+      _message(message, type) {
+        this.$message({
+          message,
+          type
+        })
+      },
+      _register() {
         this.$refs.ruleForm.validate(valid => {
           if (valid) {
-            axios.post('http://localhost:8080/register', {
+            API.register({
               name: this.ruleForm.name,
-              password: this.ruleForm.password
-            }).then(res => {
-              const data = res.data
-
-              this.$message({
-                message: data.msg,
-                type: data.code === 0 ? 'success' : 'warning'
-              });
+              password: this.ruleForm.password,
+              type: 1
             })
+              .then(({ data }) => {
+                this._message(data.msg)
+              })
+              .catch(() => {
+                this._message('注册失败', 'error')
+              })
           }
         })
       },
 
-      _login () {
-        this.$refs.ruleForm2.validate(valid => {
+      _login() {
+        this.$refs.ruleForm.validate(valid => {
           if (valid) {
-            axios.post('http://localhost:8080/login', {
-              name: this.ruleForm2.name,
-              password: this.ruleForm2.password
-            }).then(res => {
-              const data = res.data
-
-              this.$message({
-                message: data.msg,
-                type: data.code === 0 ? 'success' : 'warning'
-              });
+            API.login({
+              name: this.ruleForm.name,
+              password: this.ruleForm.password,
+              type: 1
             })
+              .then(({ data }) => {
+                this._message(data.msg)
+                window.sessionStorage.setItem('username', this.ruleForm.name)
+                window.sessionStorage.setItem('usertype', 1)
+                this.$router.push('pic')
+              })
+              .catch(() => {
+                this._message('登录失败', 'error')
+              })
           }
         })
       }

@@ -47,9 +47,10 @@
         <i class="el-icon-delete act-icon"
           v-popover:popover></i>
       </div>
+
       <div v-else>
-        <i class="el-icon-star-off"
-          @click="_delete"></i>
+        <i class="el-icon-star-off pointer" v-show="values.status === 101" @click="_borrow"></i>
+        <i class="el-icon-time"></i>
       </div>
     </div>
 
@@ -57,64 +58,80 @@
       :values="values"
       @ok="_editOk"
       @cancel="_close"></bookImport>
+    <bookBorrow :dialogFormVisible="borrowBook"
+      @ok="_borrowOk"
+      @cancel="_borrowCancel"></bookBorrow>
   </myCard>
 </template>
 
 <script>
   import myCard from './Card'
   import bookImport from './BookImport'
+  import bookBorrow from './BookBorrow'
   import API from '~api'
 
   export default {
     components: {
       myCard,
-      bookImport
+      bookImport,
+      bookBorrow
     },
     props: {
       src: {
         type: String,
-        default: 'https://img12.360buyimg.com/n7/jfs/t2779/56/3892652095/277373/29e1d2f1/57a01084N1718119c.jpg',
+        default:
+          'https://img12.360buyimg.com/n7/jfs/t2779/56/3892652095/277373/29e1d2f1/57a01084N1718119c.jpg'
       },
       values: {
         type: Object,
         default: {}
       }
     },
-    data () {
+    data() {
       return {
         userType: sessionStorage.getItem('usertype'),
         editBook: false,
-        popoverVisible: false
+        popoverVisible: false,
+        borrowBook: false
       }
     },
     methods: {
-      _edit () {
+      _edit() {
         this.editBook = true
       },
-      _close () {
+      _close() {
         this.editBook = false
       },
-      _editOk (formValues) {
+      _editOk(formValues) {
         API.editBook({ ...formValues, id: this.values.id }).then(res => {
           this.editBook = false
           this.$emit('getList')
         })
       },
-      _delete () {
+      _delete() {
         this.popoverVisible = true
       },
-      _deleteCancel () {
+      _deleteCancel() {
         this.popoverVisible = false
       },
-      _deleteOk () {
+      _deleteOk() {
         API.deleteBook({ id: this.values.id }).then(res => {
           this.popoverVisible = false
           this.$emit('getList')
         })
+      },
+      _borrow() {
+        this.borrowBook = true
+      },
+      _borrowCancel() {
+        this.borrowBook = false
+      },
+      _borrowOk() {
+        this.borrowBook = false
       }
     },
     computed: {
-      statusClass () {
+      statusClass() {
         return this.values.status === 101 ? 'normal' : 'borrow'
       }
     }
@@ -147,12 +164,6 @@
   .status-box {
     padding: 0 10px 10px 10px;
     overflow: hidden;
-    & .normal {
-      color: #13de3a
-    }
-    & .borrow {
-      color: red
-    }
 
     & .left {
       float: left;
@@ -162,7 +173,15 @@
       float: right;
     }
   }
-
+  .normal {
+    color: #13de3a;
+  }
+  .borrow {
+    color: red;
+  }
+  .pointer {
+    cursor: pointer;
+  }
   .action-box {
     padding: 0 10px 10px 10px;
   }
@@ -173,6 +192,6 @@
   }
 
   .act-icon:nth-last-child(1) {
-    margin: 0
+    margin: 0;
   }
 </style>

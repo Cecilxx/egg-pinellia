@@ -12,7 +12,6 @@
       <el-input type="password"
         v-model="ruleForm2.password"></el-input>
     </el-form-item>
-    <el-button @click="_register">注册</el-button>
     <el-button @click="_login">登录</el-button>
   </el-form>
 </template>
@@ -21,57 +20,48 @@
   import API from '~api'
 
   export default {
-    data () {
+    data() {
       return {
         ruleForm: {},
         ruleForm2: {},
         rules: {
-          name: [{
-            required: true
-          }],
-          password: [{
-            required: true
-          }]
+          name: [
+            {
+              required: true
+            }
+          ],
+          password: [
+            {
+              required: true
+            }
+          ]
         }
       }
     },
     methods: {
-      _message (message, type = "success") {
+      _message(message, type = 'success') {
         this.$message({
           message,
           type
-        });
-      },
-      _register () {
-        this.$refs.ruleForm2.validate(valid => {
-          if (valid) {
-            API.register({
-              name: this.ruleForm2.name,
-              password: this.ruleForm2.password,
-              type: 2
-            }).then(({ data }) => {
-              this._message(data.msg)
-            }).catch(() => {
-              this._message('注册失败', 'error')
-            })
-          }
         })
       },
-      _login () {
+      _login() {
         this.$refs.ruleForm2.validate(valid => {
           if (valid) {
             API.login({
               name: this.ruleForm2.name,
               password: this.ruleForm2.password,
               type: 2
-            }).then(({ data }) => {
-              this._message(data.msg)
-              window.sessionStorage.setItem('username', this.ruleForm2.name)
-              window.sessionStorage.setItem('usertype', 2)
-              this.$router.push('pic')
-            }).catch(() => {
-              this._message('登录失败', 'error')
             })
+              .then(({ data }) => {
+                this._message(data.msg)
+                window.sessionStorage.setItem('username', this.ruleForm2.name)
+                window.sessionStorage.setItem('usertype', 2)
+                this.$router.push('pic')
+              })
+              .catch(() => {
+                this._message('登录失败', 'error')
+              })
           }
         })
       }
