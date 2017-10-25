@@ -130,8 +130,8 @@
         API.borrowBook({
           bookId: this.values.id,
           borrowName: formValues.borrowName,
-          borrowStartDate: formValues.borrowDate[0].toDateString,
-          borrowEndDate: formValues.borrowDate[1].toDateString,
+          borrowStartDate: formValues.borrowDate[0].toDateString(),
+          borrowEndDate: formValues.borrowDate[1].toDateString(),
           borrowId: sessionStorage.getItem('userid')
         }).then(() => {
           this.borrowBook = false
@@ -142,6 +142,10 @@
     computed: {
       statusClass() {
         return this.values.status === 101 ? 'normal' : 'borrow'
+      },
+      borrowInfo() {
+        return `${this.values.borrow_name}: ${this.values.borrow_startdate}至${this
+          .values.borrow_enddate}`
       }
     }
   }
