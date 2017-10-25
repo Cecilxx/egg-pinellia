@@ -24,11 +24,16 @@ const deleteBook = data => {
   return axios.post('/deletebook', data)
 }
 
+const borrowBook = data => {
+  return axios.post('/borrowbook', data)
+}
+
 export default {
   login,
   register,
   importBook,
   getBookList,
   editBook,
-  deleteBook
+  deleteBook,
+  borrowBook
 }

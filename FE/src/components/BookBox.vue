@@ -15,7 +15,7 @@
       </div>
       <div class="right">
         <span :class="statusClass">
-          {{ values.status === 102 ? '借阅中' : '正常' }}
+          {{ values.status === 102 ? '借阅' : '正常' }}
 
           <el-tooltip v-if="values.status === 102"
             :content="borrowInfo"
@@ -126,8 +126,17 @@
       _borrowCancel() {
         this.borrowBook = false
       },
-      _borrowOk() {
-        this.borrowBook = false
+      _borrowOk(formValues) {
+        API.borrowBook({
+          bookId: this.values.id,
+          borrowName: formValues.borrowName,
+          borrowStartDate: formValues.borrowDate[0].toDateString,
+          borrowEndDate: formValues.borrowDate[1].toDateString,
+          borrowId: sessionStorage.getItem('userid')
+        }).then(() => {
+          this.borrowBook = false
+          this.$emit('getList')
+        })
       }
     },
     computed: {

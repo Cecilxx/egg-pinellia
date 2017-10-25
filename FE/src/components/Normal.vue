@@ -44,7 +44,7 @@
       }
     },
     methods: {
-      _message(message, type) {
+      _message(message, type = 'success') {
         this.$message({
           message,
           type
@@ -80,6 +80,7 @@
                 this._message(data.msg)
                 window.sessionStorage.setItem('username', this.ruleForm.name)
                 window.sessionStorage.setItem('usertype', 1)
+                window.sessionStorage.setItem('userid', data.id)
                 this.$router.push('pic')
               })
               .catch(() => {

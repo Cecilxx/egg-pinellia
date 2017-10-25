@@ -15,7 +15,8 @@ import {
   Dialog,
   Select,
   Option,
-  Popover
+  Popover,
+  DatePicker
 } from 'element-ui'
 import App from './App'
 import router from './router'
@@ -36,7 +37,8 @@ const UIComponents = [
   Dialog,
   Select,
   Option,
-  Popover
+  Popover,
+  DatePicker
 ]
 for (let i = 0, len = UIComponents.length; i < len; i++) {
   Vue.component(UIComponents[i].name, UIComponents[i])

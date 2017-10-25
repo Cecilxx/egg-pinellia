@@ -7,14 +7,19 @@
       :label-width="formLabelWidth"
       :rules="rules">
       <el-form-item label="借阅人"
-        prop="name">
-        <el-input v-model="form.name"
+        prop="borrowName">
+        <el-input v-model="form.borrowName" :disabled="true"
           auto-complete="off"></el-input>
       </el-form-item>
       <el-form-item label="时间"
-        prop="date">
-        <el-input v-model="form.date"
-          auto-complete="off"></el-input>
+        prop="borrowDate">
+        <el-date-picker
+          style="width: 100%"
+          v-model="form.borrowDate"
+          type="daterange"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期">
+        </el-date-picker>
       </el-form-item>
     </el-form>
     <div slot="footer"
@@ -38,16 +43,17 @@
     data() {
       return {
         form: {
-          title: '',
-          date: ''
+          borrowName: sessionStorage.getItem('username'),
+          borrowDate: ''
         },
+        value11: '',
         rules: {
-          name: [
+          borrowName: [
             {
               required: true
             }
           ],
-          date: [
+          borrowDate: [
             {
               required: true
             }

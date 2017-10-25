@@ -34,6 +34,15 @@ module.exports = app => {
 
       ctx.body = result
     }
+
+    async borrowBook() {
+      const ctx = this.ctx
+      const service = ctx.service
+      const body = ctx.request.body
+      const result = await service.book.borrowBook(body)
+
+      ctx.body = result
+    }
   }
   return BookController
 }

@@ -35,17 +35,19 @@ module.exports = app => {
       if (!sqlUserInfo) {
         return {
           code: 1,
-          msg: '用户名或密码错误'
+          msg: '用户不存在'
         }
       }
 
       const sqlHash = sqlUserInfo.hash
+      const sqlId = sqlUserInfo.id
       const checkPassword = await bcrypt.compare(password, sqlHash)
 
       if (checkPassword) {
         return {
           code: 0,
-          msg: '登录成功'
+          msg: '登录成功',
+          id: sqlId
         }
       } else {
         return {
