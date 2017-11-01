@@ -1,6 +1,6 @@
 {
   "name": "be",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "bcrypt": "^1.0.3",
     "csprng": "^0.1.2",
-    "egg": "^1.9.0",
+    "egg": "^1.10.0",
     "egg-cors": "^1.2.0",
     "egg-mysql": "^3.0.0",
     "egg-scripts": "^2.1.0",

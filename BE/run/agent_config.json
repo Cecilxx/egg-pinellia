@@ -18,7 +18,7 @@
       "cookieMaxAge": "1y"
     },
     "watcher": {
-      "type": "development",
+      "type": "default",
       "eventSources": {
         "default": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/lib/event-sources/default",
         "development": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/lib/event-sources/development"
@@ -84,12 +84,6 @@
     "helper": {
       "shtml": {}
     },
-    "development": {
-      "watchDirs": [],
-      "ignoreDirs": [],
-      "fastReady": true,
-      "reloadOnDebug": true
-    },
     "logrotator": {
       "filesRotateByHour": null,
       "filesRotateBySize": null,
@@ -103,8 +97,9 @@
       "dir": "/Users/liuxingxing/DEMO/Pinellia/BE/app/public",
       "dynamic": true,
       "preload": false,
-      "buffer": false,
-      "maxFiles": 1000
+      "buffer": true,
+      "maxFiles": 1000,
+      "maxAge": 31536000
     },
     "jsonp": {
       "limit": 50,
@@ -116,7 +111,7 @@
     },
     "view": {
       "root": "/Users/liuxingxing/DEMO/Pinellia/BE/app/view",
-      "cache": false,
+      "cache": true,
       "defaultExtension": ".html",
       "defaultViewEngine": "nunjucks",
       "mapping": {
@@ -128,7 +123,7 @@
       "throwOnUndefined": false,
       "trimBlocks": false,
       "lstripBlocks": false,
-      "cache": false
+      "cache": true
     },
     "cors": {},
     "mysql": {
@@ -146,7 +141,7 @@
         "database": "pinellia"
       }
     },
-    "env": "local",
+    "env": "prod",
     "name": "be",
     "keys": "<String len: 9>",
     "proxy": false,
@@ -155,7 +150,7 @@
     "hostHeaders": "x-forwarded-host",
     "pkg": {
       "name": "be",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "",
       "main": "index.js",
       "scripts": {
@@ -169,7 +164,7 @@
       "dependencies": {
         "bcrypt": "^1.0.3",
         "csprng": "^0.1.2",
-        "egg": "^1.9.0",
+        "egg": "^1.10.0",
         "egg-cors": "^1.2.0",
         "egg-mysql": "^3.0.0",
         "egg-scripts": "^2.1.0",
@@ -213,21 +208,19 @@
       }
     },
     "logger": {
-      "dir": "/Users/liuxingxing/DEMO/Pinellia/BE/logs/be",
+      "dir": "/Users/liuxingxing/logs/be",
       "encoding": "utf8",
-      "env": "local",
+      "env": "prod",
       "level": "INFO",
       "consoleLevel": "INFO",
-      "disableConsoleAfterReady": false,
+      "disableConsoleAfterReady": true,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "be-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {
-        "consoleLevel": "WARN"
-      },
+      "coreLogger": {},
       "allowDebugAtProd": true,
       "type": "agent"
     },
@@ -364,21 +357,6 @@
       "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security",
       "version": "1.12.1"
     },
-    "development": {
-      "enable": true,
-      "package": "egg-development",
-      "name": "development",
-      "dependencies": [
-        "watcher"
-      ],
-      "optionalDependencies": [],
-      "env": [
-        "local"
-      ],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-development",
-      "version": "1.3.1"
-    },
     "schedule": {
       "enable": true,
       "package": "egg-schedule",
@@ -388,7 +366,7 @@
       "env": [],
       "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
       "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-schedule",
-      "version": "2.4.1"
+      "version": "2.6.0"
     },
     "logrotator": {
       "enable": true,
@@ -425,7 +403,7 @@
       "env": [],
       "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
       "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-jsonp",
-      "version": "1.1.2"
+      "version": "1.2.1"
     },
     "view": {
       "enable": true,

@@ -6,7 +6,7 @@
       ".tpl": "/Users/liuxingxing/DEMO/Pinellia/BE/config/config.default.js"
     },
     "root": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view/config/config.default.js",
-    "cache": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view/config/config.local.js",
+    "cache": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view/config/config.default.js",
     "defaultExtension": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view/config/config.default.js"
   },
   "news": {
@@ -36,7 +36,7 @@
       "value": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js"
     },
     "hsts": {
-      "enable": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.local.js",
+      "enable": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js",
       "maxAge": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js",
       "includeSubdomains": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js"
     },
@@ -94,7 +94,7 @@
     "cookieMaxAge": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-i18n/config/config.default.js"
   },
   "watcher": {
-    "type": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/config/config.local.js",
+    "type": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/config/config.default.js",
     "eventSources": {
       "default": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/config/config.default.js",
       "development": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/config/config.default.js"
@@ -114,12 +114,6 @@
   "helper": {
     "shtml": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/config.default.js"
   },
-  "development": {
-    "watchDirs": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-development/config/config.default.js",
-    "ignoreDirs": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-development/config/config.default.js",
-    "fastReady": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-development/config/config.default.js",
-    "reloadOnDebug": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-development/config/config.default.js"
-  },
   "logrotator": {
     "filesRotateByHour": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-logrotator/config/config.default.js",
     "filesRotateBySize": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-logrotator/config/config.default.js",
@@ -133,8 +127,9 @@
     "dir": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.default.js",
     "dynamic": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.default.js",
     "preload": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.default.js",
-    "buffer": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.default.js",
-    "maxFiles": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.default.js"
+    "buffer": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.prod.js",
+    "maxFiles": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.default.js",
+    "maxAge": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/config.prod.js"
   },
   "jsonp": {
     "limit": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-jsonp/config/config.default.js",
@@ -146,7 +141,7 @@
     "throwOnUndefined": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.default.js",
     "trimBlocks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.default.js",
     "lstripBlocks": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.default.js",
-    "cache": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.local.js"
+    "cache": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/config.default.js"
   },
   "cors": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-cors/config/config.default.js",
   "env": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
@@ -227,9 +222,7 @@
     "coreLogName": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
     "agentLogName": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
     "errorLogName": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
-    "coreLogger": {
-      "consoleLevel": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.local.js"
-    },
+    "coreLogger": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js",
     "allowDebugAtProd": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/config.default.js"
   },
   "httpclient": {
