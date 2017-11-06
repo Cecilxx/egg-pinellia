@@ -24,7 +24,10 @@ exports.security = {
   csrf: {
     enable: false
   },
-  domainWhiteList: ['http://localhost:8081'] // 这个端口一定要跟你实际的一致
+  methodnoallow: {
+    enable: false
+  },
+  domainWhiteList: ['http://localhost:80'] // 这个端口一定要跟你实际的一致
 }
 
 exports.mysql = {
