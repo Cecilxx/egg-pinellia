@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default axios.create({
   // baseURL: 'http://localhost:8080',
-  baseURL: '/back',
+  baseURL: '',
   transformResponse: [
     function(data) {
       const res = data && JSON.parse(data)
