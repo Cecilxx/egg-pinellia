@@ -7,9 +7,11 @@ Get start with [Egg](https://eggjs.org/), [Vue](https://cn.vuejs.org/index.html)
 >2017/10/07
 >checkout branch mobx to see the version mobx instead of redux! -->
 
-<!-- [中文](https://github.com/YutHelloWorld/vortex-react/blob/master/README-zh.md) -->
+[线上地址](http://97.64.43.217/pinellia/index.html)
 >在实现第一个小目标之后（登录、注册）之后，突然想到是否可以接着往下写一些小项目，于是乎产生了实现一个图书借阅平台的想法。
 >目前设计两种角色：普通用户（借阅、归还等操作）和管理员（录入、删除等操作）。
+>目前只支持注册：普通用户查看书本信息， 管理员（目前为自己）尚未开放注册。
+
 <details>
 <summary><strong>Table of Contents</strong></summary>
 
@@ -42,7 +44,7 @@ Get start with [Egg](https://eggjs.org/), [Vue](https://cn.vuejs.org/index.html)
 
 - 登录注册（Done）
 - 管理员登录后可录入、删除书本信息（Done）
-- 普通用户登录后可借阅、归还等操作（Waiting）
+- 普通用户登录后可借阅、归还等操作（Coding）
 
 ---
 

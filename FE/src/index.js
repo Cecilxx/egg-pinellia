@@ -40,8 +40,12 @@ const UIComponents = [
   Popover,
   DatePicker
 ]
+// for (let i = 0, len = UIComponents.length; i < len; i++) {
+//   Vue.component(UIComponents[i].name, UIComponents[i])
+// }
+
 for (let i = 0, len = UIComponents.length; i < len; i++) {
-  Vue.component(UIComponents[i].name, UIComponents[i])
+  Vue.use(UIComponents[i])
 }
 Vue.prototype.$message = Message
 

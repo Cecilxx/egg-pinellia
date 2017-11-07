@@ -1,19 +1,14 @@
-exports.nunjucks = {
-  enable: true,
-  package: "egg-view-nunjucks"
-};
-
 exports.cors = {
   enable: true,
-  package: "egg-cors"
-};
+  package: 'egg-cors'
+}
 
 exports.mysql = {
   enable: true,
-  package: "egg-mysql"
-};
+  package: 'egg-mysql'
+}
 
-// exports.sequelize = {
-//   enable: true,
-//   package: "egg-sequelize"
-// };
+exports.security = {
+  enable: true,
+  package: 'egg-security'
+}

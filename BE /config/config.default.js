@@ -1,33 +1,18 @@
 exports.keys = '123123123'
 
-// 添加 view 配置
-exports.view = {
-  defaultViewEngine: 'nunjucks',
-  mapping: {
-    '.tpl': 'nunjucks'
-  }
-}
-
-exports.news = {
-  pageSize: 5,
-  serverUrl: 'https://hacker-news.firebaseio.com/v0'
-}
-
-// add middleware robot
-exports.middleware = ['robot']
-// robot's configurations
-exports.robot = {
-  ua: [/Baiduspider/i]
-}
-
 exports.security = {
   csrf: {
     enable: false
   },
-  methodnoallow: {
-    enable: false
-  },
-  domainWhiteList: ['http://localhost:80'] // 这个端口一定要跟你实际的一致
+  // methodnoallow: {
+  //   enable: false
+  // },
+  domainWhiteList: ['97.64.43.217:80'] // 这个端口一定要跟你实际的一致
+}
+
+exports.cors = {
+  origin: '*'
+  // allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
 }
 
 exports.mysql = {
@@ -35,6 +20,7 @@ exports.mysql = {
   client: {
     // host
     host: '97.64.43.217',
+    // host: 'localhost',
     // 端口号
     port: '3306',
     // 用户名

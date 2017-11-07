@@ -15,14 +15,8 @@
       </div>
       <div class="right">
         <span :class="statusClass">
-          {{ values.status === 102 ? '借阅' : '正常' }}
-
-          <el-tooltip v-if="values.status === 102"
-            :content="borrowInfo"
-            placement="top"
-            effect="light">
-            <i class="el-icon-information"></i>
-          </el-tooltip>
+          <span v-if="values.status === 101">正常</span>
+          <span v-else>借阅中</span>
         </span>
 
       </div>
@@ -49,8 +43,10 @@
       </div>
 
       <div v-else>
-        <i class="el-icon-star-off pointer" v-show="values.status === 101" @click="_borrow"></i>
-        <i class="el-icon-time"></i>
+        <el-button
+          type="text"
+          @click="_borrow"
+          :disabled="values.status === 102">借阅</el-button>
       </div>
     </div>
 
@@ -197,11 +193,12 @@
   }
   .action-box {
     padding: 0 10px 10px 10px;
+    min-height: 30px;
   }
 
   .act-icon {
     cursor: pointer;
-    /* margin-right: 2px; */
+    margin-right: 2px;
   }
 
   .act-icon:nth-last-child(1) {

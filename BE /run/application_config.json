@@ -18,22 +18,22 @@
     "i18n": {
       "defaultLocale": "en_US",
       "dirs": [
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-onerror/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-session/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-i18n/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-multipart/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-schedule/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-logrotator/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-jsonp/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-cors/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/locales",
-        "/Users/liuxingxing/DEMO/Pinellia/BE/config/locales"
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-onerror/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-session/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-i18n/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-watcher/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-multipart/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-security/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-development/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-schedule/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-logrotator/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-static/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-jsonp/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-view/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-cors/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-mysql/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/locales",
+        "/Users/liuxingxing/DEMO/Pinellia/BE /config/locales"
       ],
       "queryField": "locale",
       "cookieField": "locale",
@@ -41,10 +41,10 @@
       "functionName": "__"
     },
     "watcher": {
-      "type": "default",
+      "type": "development",
       "eventSources": {
-        "default": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/lib/event-sources/default",
-        "development": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher/lib/event-sources/development"
+        "default": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-watcher/lib/event-sources/default",
+        "development": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-watcher/lib/event-sources/development"
       }
     },
     "multipart": {
@@ -60,7 +60,7 @@
     },
     "security": {
       "domainWhiteList": [
-        "http://localhost:8081"
+        "97.64.43.217:80"
       ],
       "protocolWhiteList": [],
       "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
@@ -113,6 +113,12 @@
     "helper": {
       "shtml": {}
     },
+    "development": {
+      "watchDirs": [],
+      "ignoreDirs": [],
+      "fastReady": true,
+      "reloadOnDebug": true
+    },
     "logrotator": {
       "filesRotateByHour": null,
       "filesRotateBySize": null,
@@ -123,12 +129,11 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/liuxingxing/DEMO/Pinellia/BE/app/public",
+      "dir": "/Users/liuxingxing/DEMO/Pinellia/BE /app/public",
       "dynamic": true,
       "preload": false,
-      "buffer": true,
+      "buffer": false,
       "maxFiles": 1000,
-      "maxAge": 31536000,
       "files": "<LRU>"
     },
     "jsonp": {
@@ -140,25 +145,14 @@
       "csrf": false
     },
     "view": {
-      "root": [
-        "/Users/liuxingxing/DEMO/Pinellia/BE/app/view"
-      ],
-      "cache": true,
+      "root": "/Users/liuxingxing/DEMO/Pinellia/BE /app/view",
+      "cache": false,
       "defaultExtension": ".html",
-      "defaultViewEngine": "nunjucks",
-      "mapping": {
-        ".tpl": "nunjucks"
-      }
-    },
-    "nunjucks": {
-      "autoescape": true,
-      "throwOnUndefined": false,
-      "trimBlocks": false,
-      "lstripBlocks": false,
-      "cache": true
+      "defaultViewEngine": "",
+      "mapping": {}
     },
     "cors": {
-      "origin": "<Function corsOrigin>",
+      "origin": "*",
       "allowMethods": "GET,HEAD,PUT,POST,DELETE,PATCH",
       "credentials": false,
       "keepHeadersOnError": true
@@ -171,14 +165,14 @@
       "app": true,
       "agent": false,
       "client": {
-        "host": "localhost",
+        "host": "97.64.43.217",
         "port": "3306",
         "user": "root",
         "password": "<String len: 7>",
         "database": "pinellia"
       }
     },
-    "env": "prod",
+    "env": "local",
     "name": "be",
     "keys": "<String len: 9>",
     "proxy": false,
@@ -206,16 +200,15 @@
         "egg-mysql": "^3.0.0",
         "egg-scripts": "^2.1.0",
         "egg-sequelize": "^3.1.0",
-        "egg-view-nunjucks": "^2.1.4",
         "mysql2": "^1.4.2"
       },
       "devDependencies": {
         "egg-bin": "^4.3.3"
       }
     },
-    "baseDir": "/Users/liuxingxing/DEMO/Pinellia/BE",
+    "baseDir": "/Users/liuxingxing/DEMO/Pinellia/BE ",
     "HOME": "/Users/liuxingxing",
-    "rundir": "/Users/liuxingxing/DEMO/Pinellia/BE/run",
+    "rundir": "/Users/liuxingxing/DEMO/Pinellia/BE /run",
     "dump": {
       "ignore": "<Set>"
     },
@@ -246,19 +239,21 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/Users/liuxingxing/logs/be",
+      "dir": "/Users/liuxingxing/DEMO/Pinellia/BE /logs/be",
       "encoding": "utf8",
-      "env": "prod",
+      "env": "local",
       "level": "INFO",
       "consoleLevel": "INFO",
-      "disableConsoleAfterReady": true,
+      "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
       "appLogName": "be-web.log",
       "coreLogName": "egg-web.log",
       "agentLogName": "egg-agent.log",
       "errorLogName": "common-error.log",
-      "coreLogger": {},
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
       "allowDebugAtProd": true,
       "type": "application"
     },
@@ -305,18 +300,6 @@
     "clusterClient": {
       "responseTimeout": 60000
     },
-    "news": {
-      "pageSize": 5,
-      "serverUrl": "https://hacker-news.firebaseio.com/v0"
-    },
-    "middleware": [
-      "robot"
-    ],
-    "robot": {
-      "ua": [
-        {}
-      ]
-    },
     "coreMiddlewares": [
       "cors",
       "meta",
@@ -329,12 +312,8 @@
       "i18n",
       "securities"
     ],
-    "appMiddlewares": [
-      "robot"
-    ],
-    "appMiddleware": [
-      "robot"
-    ],
+    "appMiddlewares": [],
+    "appMiddleware": [],
     "multipartParseOptions": {
       "autoFields": false,
       "defCharset": "utf8",
@@ -356,8 +335,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-onerror",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-onerror",
       "version": "1.5.0"
     },
     "session": {
@@ -367,8 +346,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-session",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-session",
       "version": "2.1.1"
     },
     "i18n": {
@@ -378,8 +357,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-i18n",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-i18n",
       "version": "1.2.0"
     },
     "watcher": {
@@ -389,8 +368,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-watcher",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-watcher",
       "version": "2.2.0"
     },
     "multipart": {
@@ -400,22 +379,37 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-multipart",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-multipart",
       "version": "1.5.0"
     },
     "security": {
       "enable": true,
-      "package": "egg-security",
       "name": "security",
       "dependencies": [],
       "optionalDependencies": [
         "session"
       ],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-security",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /config/plugin.js",
+      "package": "egg-security",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-security",
       "version": "1.12.1"
+    },
+    "development": {
+      "enable": true,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-development",
+      "version": "1.3.1"
     },
     "schedule": {
       "enable": true,
@@ -424,8 +418,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-schedule",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-schedule",
       "version": "2.6.0"
     },
     "logrotator": {
@@ -437,8 +431,8 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-logrotator",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-logrotator",
       "version": "2.2.3"
     },
     "static": {
@@ -448,8 +442,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-static",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-static",
       "version": "1.4.1"
     },
     "jsonp": {
@@ -461,8 +455,8 @@
         "security"
       ],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-jsonp",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-jsonp",
       "version": "1.2.1"
     },
     "view": {
@@ -472,23 +466,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg/config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-view",
       "version": "1.1.2"
-    },
-    "nunjucks": {
-      "enable": true,
-      "package": "egg-view-nunjucks",
-      "name": "nunjucks",
-      "dependencies": [
-        "security",
-        "view"
-      ],
-      "optionalDependencies": [],
-      "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-view-nunjucks",
-      "version": "2.1.4"
     },
     "cors": {
       "enable": true,
@@ -497,8 +477,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-cors",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-cors",
       "version": "1.2.0"
     },
     "mysql": {
@@ -508,8 +488,8 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "/Users/liuxingxing/DEMO/Pinellia/BE/config/plugin.js",
-      "path": "/Users/liuxingxing/DEMO/Pinellia/BE/node_modules/egg-mysql",
+      "from": "/Users/liuxingxing/DEMO/Pinellia/BE /config/plugin.js",
+      "path": "/Users/liuxingxing/DEMO/Pinellia/BE /node_modules/egg-mysql",
       "version": "3.0.0"
     }
   }
