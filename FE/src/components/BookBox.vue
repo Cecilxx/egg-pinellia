@@ -193,7 +193,6 @@
   }
   .action-box {
     padding: 0 10px 10px 10px;
-    min-height: 30px;
   }
 
   .act-icon {
